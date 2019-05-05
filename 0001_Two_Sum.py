@@ -12,20 +12,34 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
-Result: https://leetcode.com/submissions/detail/226689385/
+Result: https://leetcode.com/submissions/detail/226930069/
 """
 from typing import List
 
 
 class Solution(object):
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for idx in range(len(nums)):
-            for ptr in range(idx+1, len(nums)):
-                if nums[ptr] == target - nums[idx]:
-                    return idx, ptr
+
+        hashtable = dict()
+        for idx, value in enumerate(nums):
+            subvalue = target - value
+            if subvalue in hashtable:
+                return idx, hashtable[subvalue]
+            else:
+                hashtable[value] = idx
 
 
 nums = [2, 7, 11, 15]
 target = 9
+solution = Solution()
+print(solution.twoSum(nums, target))
+
+nums = [3, 2, 4]
+target = 6
+solution = Solution()
+print(solution.twoSum(nums, target))
+
+nums = [-10, -1, -18, -19]
+target = -19
 solution = Solution()
 print(solution.twoSum(nums, target))
