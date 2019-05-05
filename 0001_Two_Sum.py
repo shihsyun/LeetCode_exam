@@ -14,15 +14,11 @@ return [0, 1].
 
 Result: https://leetcode.com/submissions/detail/226689385/
 """
+from typing import List
 
 
 class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         for idx in range(len(nums)):
             for ptr in range(idx+1, len(nums)):
                 if nums[ptr] == target - nums[idx]:
