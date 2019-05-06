@@ -41,12 +41,12 @@ class Solution:
 
 x = 123
 solution = Solution()
-print(solution. reverse(x))
+print(solution.reverse(x))
 
 x = -123
 solution = Solution()
-print(solution. reverse(x))
+print(solution.reverse(x))
 
 x = 120
 solution = Solution()
-print(solution. reverse(x))
+print(solution.reverse(x))
