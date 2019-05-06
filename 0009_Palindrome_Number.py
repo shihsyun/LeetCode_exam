@@ -19,18 +19,33 @@ Follow up:
 
 Coud you solve it without converting the integer to a string?
 
-Result: https://leetcode.com/submissions/detail/227046721/
+Result: https://leetcode.com/submissions/detail/227121683/
 """
 
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
 
-        if x < 0 or (x != 0 and x % 10 == 0):
-            return False
-
+        z = x
         y = 0
-        while x > y:
-            y = y*10 + x % 10
-            x = x/10
-        return x == y or y/10 == x
+        while x > 0:
+            y = y * 10 + x % 10
+            x = int(x/10)
+        return z == y
+
+
+x = 121
+solution = Solution()
+print(solution.isPalindrome(x))
+
+x = -121
+solution = Solution()
+print(solution.isPalindrome(x))
+
+x = 10
+solution = Solution()
+print(solution.isPalindrome(x))
+
+x = 11
+solution = Solution()
+print(solution.isPalindrome(x))
